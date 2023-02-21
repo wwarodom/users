@@ -43,6 +43,18 @@ export default function Home() {
               SWR Page
             </Link>
           </li>
+          <hr />
+          <li>
+            <Link href="/routeDemo">
+              Router demo
+            </Link>
+          </li>
+          <hr />
+          <li>
+            <Link href="/toastDemo">
+              Toast demo (Notification)
+            </Link>
+          </li>
         </ol>
       </main>
     </>
