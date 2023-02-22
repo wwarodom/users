@@ -55,6 +55,11 @@ export default function Home() {
               Toast demo (Notification)
             </Link>
           </li>
+          <li>
+            <Link href="/zustand">
+              Zustand demo
+            </Link>
+          </li>
         </ol>
       </main>
     </>

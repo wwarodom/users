@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 import Footer from './footer'
 import Head from './head'
 import Nav from './nav'
@@ -8,14 +8,25 @@ type LayoutProps = {
 }
 
 export default function Layout({ children }: LayoutProps) {
+
+    const [isHydated, setIsHydrated] = useState(false)
+
+    useEffect(() => {
+        setIsHydrated(true)
+    }, [])
+
     return (
         <>
-            <Head />
-            <Nav />
-            <main className='flex-col justify-center items-center'>
-                {children}
-            </main>
-            <Footer />
+            {isHydated ?
+                (<div>
+                    <Head />
+                    <Nav />
+                    <main className='flex-col justify-center items-center'>
+                        {children}
+                    </main>
+                    <Footer />
+                </div>)
+                : <div>Loading...</div>}
         </>
     )
 }
